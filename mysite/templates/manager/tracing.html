@@ -1,0 +1,81 @@
+{% extends 'core/core.html' %}
+
+{% block content %}
+
+<script type="text/javascript">
+    function IsEmpty() {
+
+      x= document.forms["signup_form"]["signature"].files.length
+      if (x==0)
+      {
+        document.getElementById('f-signature').innerText= "please enter your signature"
+        document.getElementById('f-signature').style.color= "red"
+        return false;
+      }
+      else
+      {
+      document.getElementById('f-signature').innerText= ""
+      }
+
+
+      return true;
+    }
+  </script>
+
+<section class="vh-100">
+  <div class="container ">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-9">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body ">
+            <div class="row justify-content-center">
+              <h4 class="text-center my-3 pb-3">TRACING</h4>
+              <div class="col-md-10 col-lg-6 col-xl-12 order-2 order-lg-1">
+
+                <form enctype="multipart/form-data"  method="post" name="signup_form" class="mx-1 mx-md-4">
+                  {% csrf_token %}
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <label class="col-xl-12 text-success form-label">
+                        {% if success %}
+                          This signature is created by {{success.name}}.
+                          <a href="/manager/member/{{success.id}}">(view member information)</a>
+                        {% endif %}
+                      </label>
+                      <label class="col-xl-12 text-danger form-label">
+                        {% if fail %}
+                          This is not the signature of the group
+                        {% endif %}
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <label class="col-xl-3 text-primary form-label" >Signature</label>
+                      <input name="signature" type="file">
+                      <label id="f-signature" style="color:red">
+                        {% if signature_error %}
+                            Signature is error
+                        {% endif %}
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-xl-12 d-flex justify-content-end">
+                    <button type="submit" onclick="return IsEmpty()" class="btn btn-success btn-lg">Tracing</button>
+                  </div>
+                  </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

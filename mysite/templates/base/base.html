@@ -1,0 +1,82 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href=" {% static 'base/fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'base/css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css' %}">
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
+    {% block header %}
+    {% endblock %}
+    <title>Group signature</title>
+  </head>
+  <body>
+
+
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+
+      <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+        <div class="container">
+          <div style="height:80px"  class="row align-items-center position-relative">
+            <div class="site-logo">
+              <a href="/" class="text-black"><span class="text-primary">Group signature</a>
+            </div>
+
+            <div class="col-12">
+              <nav class="site-navigation text-right ml-auto " role="navigation">
+
+                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                  <li><a href="/manager" class="nav-link">Manage group</a></li>
+                  <li><a href="/publickey" class="nav-link">Public key</a></li>
+                  <li><a href="/generate" class="nav-link">Generate Signature</a></li>
+                  <li><a href="/checksignature" class="nav-link">Verifying Signature</a></li>
+                  <li><a href="/signup" class="nav-link">Sign up</a></li>
+                  {% block extent_navbar %}
+                  {% endblock %}
+                </ul>
+              </nav>
+
+            </div>
+          </div>
+        </div>
+
+      </header>
+
+
+
+    <div class="hero" style="background-image: url('{% static 'base/images/bg.jpg' %}');">
+      <div>
+      {% block content %}
+      {% endblock %}
+      </div>
+    </div>
+
+
+
+    <script src="{% static 'base/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'base/js/popper.min.js' %}"></script>
+    <script src="{% static 'base/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'base/js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'base/js/main.js' %}"></script>
+
+    {% block script %} {% endblock %}
+  </body>
+</html>

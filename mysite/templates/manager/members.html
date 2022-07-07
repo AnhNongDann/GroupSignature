@@ -1,0 +1,59 @@
+{% extends 'core/core.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="vh-100">
+      <div class="container py-5 h-80">
+        <div class="row d-flex justify-content-center align-items-center h-80">
+          <div class="col col-lg-10 col-xl-9">
+            <div class="card rounded-3">
+              <div class="card-body p-4">
+                <h4 class="text-center my-3 pb-3">SHOW ALL MEMBER</h4>
+                <table class="table mb-4">
+                  <thead>
+                    <tr>
+                      <th scope="col">Id.</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for request in list_request %}
+                    <tr>
+                      <th scope="row">{{request.id}}</th>
+                      <td> {{request.name}}</td>
+                      <td> {{request.email}}</td>
+                      <td>
+                        <a href="/manager/member/{{request.id}}"> <button class="btn btn-info ms-1">Show</button> </a>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+
+                <nav aria-label="Something">
+                   <ul class="pagination justify-content-center bg-light">
+                      <li class="page-item disabled">
+                         <a class="page-link" href="#" tabindex="-1">Previous</a>
+                      </li>
+
+                       {% for i in pages %}
+                         <li class="page-item"><a class="page-link" href="/manager/member/{{i}}">{{i}}</a></li>
+                        {% endfor %}
+
+
+                      <li class="page-item">
+                         <a class="page-link" href="#">Next</a>
+                      </li>
+                   </ul>
+                </nav>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

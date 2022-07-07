@@ -1,0 +1,92 @@
+{% extends 'manager/admin.html' %}
+{% load static %}
+
+{% block content %}
+<section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div style="height: 30px">
+
+            </div>
+            <div class="container bg-white">
+                <div class="signup-content">
+                    <form id="signup-form" class="signup-form">
+                        {% csrf_token %}
+                        <h2 class="form-title">Reset group</h2>
+                        <ul>
+                            {{f}}
+                            <li>
+                                <label> N </label>
+                                <input type="text" readonly="readonly" class="form-input"  name="P" placeholder="P"/>
+                            </li>
+
+                            <li>
+                                <label> G </label>
+                                <input type="text" readonly="readonly" class="form-input"  name="G" placeholder="G"/>
+                            </li>
+                            <li>
+                                <label> H </label>
+                                <input type="text" readonly="readonly" class="form-input"  name="H" placeholder="H"/>
+                            </li>
+                            <li>
+                                <label> Z </label>
+                                <input type="text" readonly="readonly" class="form-input"  name="Z" placeholder="Z"/>
+                            </li>
+
+                            <li>
+                                <label> L </label>
+                                <input type="text" readonly="readonly" class="form-input"  name="L" placeholder="L"/>
+                            </li>
+
+                            <li>
+                                <label> L1 </label>
+                                <input type="text" readonly="readonly" class="form-input"  name="L1" placeholder="L1"/>
+                            </li>
+                            <li>
+                                <label> L2 </label>
+                                <input type="text" readonly="readonly" class="form-input"  name="L2" placeholder="L2"/>
+                            </li>
+
+                            <li>
+                                <label> LG </label>
+                                <input type="text" readonly="readonly" class="form-input"  name="LG" placeholder="LG"/>
+                            </li>
+
+                            <li>
+                                <label> K </label>
+                                <input type="text" readonly="readonly" class="form-input"  name="K" placeholder="K"/>
+                            </li>
+
+                            <li>
+                                <label> ESP </label>
+                                <input type="text" readonly="readonly" class="form-input"  name="ESP" placeholder="ESP"/>
+                            </li>
+
+                            <li>
+                                <label> Y </label>
+                                <input type="text" readonly="readonly" class="form-input"  name="Y" placeholder="Y"/>
+                            </li>
+
+                             <li>
+                                <label> P </label>
+                                <input type="text" readonly="readonly" class="form-input"  name="Y" placeholder="P"/>
+                                 <label> Private </label>
+                            </li>
+
+                             <li>
+                                <label> Q </label>
+                                <input type="text" readonly="readonly" class="form-input"  name="Y" placeholder="Q"/>
+                                 <label> Private </label>
+                            </li>
+
+                             <li>
+                                <label> X </label>
+                                <input type="text" readonly="readonly" class="form-input"  name="Y" placeholder="X"/>
+                                 <label> Private </label>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}

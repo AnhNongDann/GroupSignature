@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="row">
+         <div class="col-4">
+            <nav id="myScrollspy">
+               <ul class="nav nav-pills flex-column">
+                  {% if check %}
+                     <li class="nav-item"><a class="nav-link" href="resetgroup">Setup Group</a></li>
+                  {% endif %}
+                  <li class="nav-item"><a class="nav-link" href="showrequest/1">Show register</a></li>
+                  <li class="nav-item"><a class="nav-link" href="privatekey">Private key</a></li>
+                  <li class="nav-item"><a class="nav-link" href="showmember/1">Show member</a></li>
+                  <li class="nav-item"><a class="nav-link" href="tracing">Tracing</a></li>
+               </ul>
+            </nav>
+         </div>
+</div>
+{% endblock %}
