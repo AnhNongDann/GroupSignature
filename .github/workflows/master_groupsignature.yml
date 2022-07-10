@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'GroupSignature'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F63CD77C45124EB3A1E4F25BCBC7669F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_71EF8AAEDD684863A9EAFBDBDE2E37DD }}
